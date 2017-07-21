@@ -37,25 +37,29 @@ enable earlier versions of CKAN to run rq-based background tasks.
 
 It is based on the code by @torfsen, mainly here: https://github.com/ckan/ckan/pull/3165
 
-.. note:: You won't be able to use the normal plugin.toolkit.enqueue_job function. Use this import which contains a fallback::
-
-       try:
-           enqueue_job = p.toolkit.enqueue_job
-       except AttributeError:
-           from ckanext.rq.jobs import enqueue as enqueue_job
-
-
 TODO:
 
 * check Redis is available on startup
 * setting ckan.redis.url from environment variable CKAN_REDIS_URL
 * transfer the tests and RQTestBase
 
+----
+Note
+----
+
+You won't be able to use the normal plugin.toolkit.enqueue_job function. Use
+this import which contains a fallback::
+
+    try:
+        enqueue_job = p.toolkit.enqueue_job
+    except AttributeError:
+        from ckanext.rq.jobs import enqueue as enqueue_job
+
 ------------
 Requirements
 ------------
 
-For CKAN versions 2.0 to 2.6.x. (Must not be used with CKAN 2.7.0 or later)
+For CKAN versions 2.3 to 2.6.x. (Must not be used with CKAN 2.7.0 or later)
 
 ------------
 Installation
@@ -73,21 +77,22 @@ To install ckanext-rq:
 
 2. Install the ckanext-rq Python package into your virtual environment::
 
-     pip install ckanext-rq
+..     pip install ckanext-rq
+     pip install git+https://github.com/davidread/ckanext-rq.git
 
-3. Add ``rq`` to the ``ckan.plugins`` setting in your CKAN
-   config file (by default the config file is located at
-   ``/etc/ckan/default/production.ini``).
+.. 3. Add ``rq`` to the ``ckan.plugins`` setting in your CKAN
+..    config file (by default the config file is located at
+..    ``/etc/ckan/default/production.ini``).
 
-4. Restart CKAN. For example if you've deployed CKAN with Apache on Ubuntu::
+3. Restart CKAN. For example if you've deployed CKAN with Apache on Ubuntu::
 
      sudo service apache2 reload
 
-5. Start the worker::
+4. Start the worker::
 
      paster --plugin=ckanext-rq jobs worker --config=/etc/ckan/default/development.ini
 
-6. To run the worker in a robust way, install and configure Supervisor: http://docs.ckan.org/en/latest/maintaining/background-tasks.html#using-supervisor
+5. To run the worker in a robust way, install and configure Supervisor: http://docs.ckan.org/en/latest/maintaining/background-tasks.html#using-supervisor
 
 ---------------
 Config Settings
@@ -104,7 +109,7 @@ Config Settings
 .. ------------------------
 
 .. To install ckanext-rq for development, activate your CKAN virtualenv and
-.. do::
+.. do:
 
 ..     git clone https://github.com/davidread/ckanext-rq.git
 ..     cd ckanext-rq
