@@ -2,31 +2,31 @@
    these badges work. The necessary Travis and Coverage config files have been
    generated for you.
 
-.. image:: https://travis-ci.org/davidread/ckanext-rq.svg?branch=master
-    :target: https://travis-ci.org/davidread/ckanext-rq
+.. .. image:: https://travis-ci.org/davidread/ckanext-rq.svg?branch=master
+..     :target: https://travis-ci.org/davidread/ckanext-rq
 
-.. image:: https://coveralls.io/repos/davidread/ckanext-rq/badge.svg
-  :target: https://coveralls.io/r/davidread/ckanext-rq
+.. .. image:: https://coveralls.io/repos/davidread/ckanext-rq/badge.svg
+..   :target: https://coveralls.io/r/davidread/ckanext-rq
 
-.. image:: https://pypip.in/download/ckanext-rq/badge.svg
-    :target: https://pypi.python.org/pypi//ckanext-rq/
-    :alt: Downloads
+.. .. image:: https://pypip.in/download/ckanext-rq/badge.svg
+..     :target: https://pypi.python.org/pypi//ckanext-rq/
+..     :alt: Downloads
 
-.. image:: https://pypip.in/version/ckanext-rq/badge.svg
-    :target: https://pypi.python.org/pypi/ckanext-rq/
-    :alt: Latest Version
+.. .. image:: https://pypip.in/version/ckanext-rq/badge.svg
+..     :target: https://pypi.python.org/pypi/ckanext-rq/
+..     :alt: Latest Version
 
-.. image:: https://pypip.in/py_versions/ckanext-rq/badge.svg
-    :target: https://pypi.python.org/pypi/ckanext-rq/
-    :alt: Supported Python versions
+.. .. image:: https://pypip.in/py_versions/ckanext-rq/badge.svg
+..     :target: https://pypi.python.org/pypi/ckanext-rq/
+..     :alt: Supported Python versions
 
-.. image:: https://pypip.in/status/ckanext-rq/badge.svg
-    :target: https://pypi.python.org/pypi/ckanext-rq/
-    :alt: Development Status
+.. .. image:: https://pypip.in/status/ckanext-rq/badge.svg
+..     :target: https://pypi.python.org/pypi/ckanext-rq/
+..     :alt: Development Status
 
-.. image:: https://pypip.in/license/ckanext-rq/badge.svg
-    :target: https://pypi.python.org/pypi/ckanext-rq/
-    :alt: License
+.. .. image:: https://pypip.in/license/ckanext-rq/badge.svg
+..     :target: https://pypi.python.org/pypi/ckanext-rq/
+..     :alt: License
 
 =============
 ckanext-rq
