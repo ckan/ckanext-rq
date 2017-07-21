@@ -37,14 +37,12 @@ enable earlier versions of CKAN to run rq-based background tasks.
 
 It is based on the code by @torfsen, mainly here: https://github.com/ckan/ckan/pull/3165
 
-NB:
+.. note:: You won't be able to use the normal plugin.toolkit.enqueue_job function. Use this import which contains a fallback::
 
-  You won't be able to use plugin.toolkit.enqueue_job. Use this fallback:
-
-  try:
-    enqueue_job = p.toolkit.enqueue_job
-  except KeyError:
-    from ckanext.rq.jobs import enqueue as enqueue_job
+       try:
+           enqueue_job = p.toolkit.enqueue_job
+       except AttributeError:
+           from ckanext.rq.jobs import enqueue as enqueue_job
 
 
 TODO:
