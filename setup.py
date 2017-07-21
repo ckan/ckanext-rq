@@ -3,6 +3,11 @@ from setuptools import setup, find_packages  # Always prefer setuptools over dis
 from codecs import open  # To use a consistent encoding
 from os import path
 
+# hack to enable 'python setup.py sdist' on Vagrant boxes
+import os
+if os.environ.get('USER', '') == 'vagrant':
+    del os.link
+
 here = path.abspath(path.dirname(__file__))
 
 # Get the long description from the relevant file

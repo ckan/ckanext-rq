@@ -131,57 +131,57 @@ Config Settings
 ..     nosetests --nologcapture --with-pylons=test.ini --with-coverage --cover-package=ckanext.rq --cover-inclusive --cover-erase --cover-tests
 
 
----------------------------------
-Registering ckanext-rq on PyPI
----------------------------------
+.. ---------------------------------
+.. Registering ckanext-rq on PyPI
+.. ---------------------------------
 
-ckanext-rq should be availabe on PyPI as
-https://pypi.python.org/pypi/ckanext-rq. If that link doesn't work, then
-you can register the project on PyPI for the first time by following these
-steps:
+.. ckanext-rq should be availabe on PyPI as
+.. https://pypi.python.org/pypi/ckanext-rq. If that link doesn't work, then
+.. you can register the project on PyPI for the first time by following these
+.. steps:
 
-1. Create a source distribution of the project::
+.. 1. Create a source distribution of the project::
 
-     python setup.py sdist
+..      python setup.py sdist
 
-2. Register the project::
+.. 2. Register the project::
 
-     python setup.py register
+..      python setup.py register
 
-3. Upload the source distribution to PyPI::
+.. 3. Upload the source distribution to PyPI::
 
-     python setup.py sdist upload
+..      python setup.py sdist upload
 
-4. Tag the first release of the project on GitHub with the version number from
-   the ``setup.py`` file. For example if the version number in ``setup.py`` is
-   0.0.1 then do::
+.. 4. Tag the first release of the project on GitHub with the version number from
+..    the ``setup.py`` file. For example if the version number in ``setup.py`` is
+..    0.0.1 then do::
 
-       git tag 0.0.1
-       git push --tags
+..        git tag 0.0.1
+..        git push --tags
 
 
-----------------------------------------
-Releasing a New Version of ckanext-rq
-----------------------------------------
+.. ----------------------------------------
+.. Releasing a New Version of ckanext-rq
+.. ----------------------------------------
 
-ckanext-rq is availabe on PyPI as https://pypi.python.org/pypi/ckanext-rq.
-To publish a new version to PyPI follow these steps:
+.. ckanext-rq is availabe on PyPI as https://pypi.python.org/pypi/ckanext-rq.
+.. To publish a new version to PyPI follow these steps:
 
-1. Update the version number in the ``setup.py`` file.
-   See `PEP 440 <http://legacy.python.org/dev/peps/pep-0440/#public-version-identifiers>`_
-   for how to choose version numbers.
+.. 1. Update the version number in the ``setup.py`` file.
+..    See `PEP 440 <http://legacy.python.org/dev/peps/pep-0440/#public-version-identifiers>`_
+..    for how to choose version numbers.
 
-2. Create a source distribution of the new version::
+.. 2. Create a source distribution of the new version::
 
-     python setup.py sdist
+..      python setup.py sdist
 
-3. Upload the source distribution to PyPI::
+.. 3. Upload the source distribution to PyPI::
 
-     python setup.py sdist upload
+..      python setup.py sdist upload
 
-4. Tag the new release of the project on GitHub with the version number from
-   the ``setup.py`` file. For example if the version number in ``setup.py`` is
-   0.0.2 then do::
+.. 4. Tag the new release of the project on GitHub with the version number from
+..    the ``setup.py`` file. For example if the version number in ``setup.py`` is
+..    0.0.2 then do::
 
-       git tag 0.0.2
-       git push --tags
+..        git tag 0.0.2
+..        git push --tags
