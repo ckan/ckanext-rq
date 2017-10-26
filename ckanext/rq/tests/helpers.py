@@ -7,7 +7,7 @@ import rq
 from ckantoolkit import config
 from ckantoolkit.tests.helpers import FunctionalTestBase
 
-from ckan.lib.redis import connect_to_redis
+from ckanext.rq.redis import connect_to_redis
 
 import ckanext.rq.jobs as jobs
 
