@@ -38,6 +38,7 @@ cd -
 
 echo "Installing ckanext-rq and its requirements..."
 python setup.py develop
+pip install -r requirements.txt
 pip install -r dev-requirements.txt
 
 echo "Moving test.ini into a subdir..."
