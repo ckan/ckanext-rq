@@ -1,28 +1,21 @@
 # encoding: utf-8
 
 import logging
-import json
-import datetime
-import uuid
-
-from dateutil.parser import parse as parse_date
-
-import ckan.lib.helpers as h
 import ckan.lib.navl.dictization_functions
 import ckan.logic as logic
 import ckan.plugins as p
-from ckan.common import config
 
-import ckanext.shift.schema
-import jobs
+from ckanext.rq import jobs
+from ckanext.rq import schema
 
 log = logging.getLogger(__name__)
 _get_or_bust = logic.get_or_bust
-_validate = ckan.lib.navl.dictization_functions.validate
+_validate = ckan.logic.validate
 _check_access = p.toolkit.check_access
 NotFound = p.toolkit.ObjectNotFound
 
-@_validate(ckanext.rq.schema.job_list_schema)
+
+@_validate(schema.job_list_schema)
 def job_list(context, data_dict):
     '''List enqueued background jobs.
 
@@ -65,7 +58,7 @@ def job_show(context, data_dict):
         raise NotFound
 
 
-@_validate(ckanext.rq.schema.job_clear_schema)
+@_validate(schema.job_clear_schema)
 def job_clear(context, data_dict):
     '''Clear background job queues.
 
