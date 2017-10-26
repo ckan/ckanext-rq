@@ -7,6 +7,8 @@ import rq
 from ckantoolkit import config
 from ckantoolkit.tests.helpers import FunctionalTestBase
 
+from ckan import logic
+
 from ckanext.rq.redis import connect_to_redis
 
 import ckanext.rq.jobs as jobs
@@ -203,3 +205,49 @@ class RecordingLogHandler(logging.Handler):
         Clear all captured log messages.
         '''
         self.messages = collections.defaultdict(list)
+
+
+def call_action(action_name, context=None, **kwargs):
+    '''Call the named ``ckan.logic.action`` function and return the result.
+
+    This is just a nicer way for user code to call action functions, nicer than
+    either calling the action function directly or via
+    :py:func:`ckan.logic.get_action`.
+
+    For example::
+
+        user_dict = call_action('user_create', name='seanh',
+                                email='seanh@seanh.com', password='pass')
+
+    Any keyword arguments given will be wrapped in a dict and passed to the
+    action function as its ``data_dict`` argument.
+
+    Note: this skips authorization! It passes 'ignore_auth': True to action
+    functions in their ``context`` dicts, so the corresponding authorization
+    functions will not be run.
+    This is because ckan.tests.logic.action tests only the actions, the
+    authorization functions are tested separately in
+    ckan.tests.logic.auth.
+    See the :doc:`testing guidelines </contributing/testing>` for more info.
+
+    This function should eventually be moved to
+    :py:func:`ckan.logic.call_action` and the current
+    :py:func:`ckan.logic.get_action` function should be
+    deprecated. The tests may still need their own wrapper function for
+    :py:func:`ckan.logic.call_action`, e.g. to insert ``'ignore_auth': True``
+    into the ``context`` dict.
+
+    :param action_name: the name of the action function to call, e.g.
+        ``'user_update'``
+    :type action_name: string
+    :param context: the context dict to pass to the action function
+        (optional, if no context is given a default one will be supplied)
+    :type context: dict
+    :returns: the dict or other value that the action function returns
+
+    '''
+    if context is None:
+        context = {}
+    context.setdefault('user', '127.0.0.1')
+    context.setdefault('ignore_auth', True)
+    return logic.get_action(action_name)(context=context, data_dict=kwargs)

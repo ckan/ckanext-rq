@@ -9,7 +9,11 @@ import ckanext.rq.jobs as jobs
 from ckantoolkit import config, ObjectNotFound
 from ckan import model
 
-from ckan.tests.helpers import call_action
+try:
+    from ckan.tests.helpers import call_action
+except ImportError:
+    from ckanext.rq.tests.helpers import call_action
+
 from ckanext.rq.tests.helpers import (
     changed_config, recorded_logs, RQTestBase
 )
