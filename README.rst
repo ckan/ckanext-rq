@@ -2,38 +2,39 @@
    these badges work. The necessary Travis and Coverage config files have been
    generated for you.
 
-.. .. image:: https://travis-ci.org/davidread/ckanext-rq.svg?branch=master
-..     :target: https://travis-ci.org/davidread/ckanext-rq
+.. .. image:: https://travis-ci.org/ckan/ckanext-rq.svg?branch=master
+..     :target: https://travis-ci.org/ckan/ckanext-rq
 
-.. .. image:: https://coveralls.io/repos/davidread/ckanext-rq/badge.svg
-..   :target: https://coveralls.io/r/davidread/ckanext-rq
+.. .. image:: https://coveralls.io/repos/ckan/ckanext-rq/badge.svg
+..   :target: https://coveralls.io/r/ckan/ckanext-rq
 
-.. .. image:: https://pypip.in/download/ckanext-rq/badge.svg
-..     :target: https://pypi.python.org/pypi//ckanext-rq/
-..     :alt: Downloads
+.. image:: https://pypip.in/download/ckanext-rq/badge.svg
+    :target: https://pypi.python.org/pypi//ckanext-rq/
+    :alt: Downloads
 
-.. .. image:: https://pypip.in/version/ckanext-rq/badge.svg
-..     :target: https://pypi.python.org/pypi/ckanext-rq/
-..     :alt: Latest Version
+.. image:: https://pypip.in/version/ckanext-rq/badge.svg
+    :target: https://pypi.python.org/pypi/ckanext-rq/
+    :alt: Latest Version
 
-.. .. image:: https://pypip.in/py_versions/ckanext-rq/badge.svg
-..     :target: https://pypi.python.org/pypi/ckanext-rq/
-..     :alt: Supported Python versions
+.. image:: https://pypip.in/py_versions/ckanext-rq/badge.svg
+    :target: https://pypi.python.org/pypi/ckanext-rq/
+    :alt: Supported Python versions
 
-.. .. image:: https://pypip.in/status/ckanext-rq/badge.svg
-..     :target: https://pypi.python.org/pypi/ckanext-rq/
-..     :alt: Development Status
+.. image:: https://pypip.in/status/ckanext-rq/badge.svg
+    :target: https://pypi.python.org/pypi/ckanext-rq/
+    :alt: Development Status
 
-.. .. image:: https://pypip.in/license/ckanext-rq/badge.svg
-..     :target: https://pypi.python.org/pypi/ckanext-rq/
-..     :alt: License
+.. image:: https://pypip.in/license/ckanext-rq/badge.svg
+    :target: https://pypi.python.org/pypi/ckanext-rq/
+    :alt: License
 
 =============
 ckanext-rq
 =============
 
-This is a backport of the RQ-based background jobs code seen in CKAN 2.7, to
-enable earlier versions of CKAN to run rq-based background tasks.
+Background jobs functionality for CKAN 2.6 and earlier.
+
+This is a backport of the background jobs functionality (based on RQ) that was introduced in CKAN 2.7. With this extension, you can make use of RQ based background tasks, on earlier versions of CKAN.
 
 It is based on the code by @torfsen, mainly here: https://github.com/ckan/ckan/pull/3165
 
@@ -41,7 +42,6 @@ TODO:
 
 * check Redis is available on startup
 * setting ckan.redis.url from environment variable CKAN_REDIS_URL
-* transfer the tests and RQTestBase
 
 ----
 Note
@@ -78,7 +78,7 @@ To install ckanext-rq:
 2. Install the ckanext-rq Python package into your virtual environment::
 
 ..     pip install ckanext-rq
-     pip install git+https://github.com/davidread/ckanext-rq.git
+     pip install git+https://github.com/ckan/ckanext-rq.git
 
 .. 3. Add ``rq`` to the ``ckan.plugins`` setting in your CKAN
 ..    config file (by default the config file is located at
@@ -104,84 +104,56 @@ Config Settings
     ckan.redis.url = redis://localhost:6379/0
 
 
-.. ------------------------
-.. Development Installation
-.. ------------------------
+------------------------
+Development Installation
+------------------------
 
-.. To install ckanext-rq for development, activate your CKAN virtualenv and
-.. do:
+To install ckanext-rq for development, activate your CKAN virtualenv and
+do:
 
-..     git clone https://github.com/davidread/ckanext-rq.git
-..     cd ckanext-rq
-..     python setup.py develop
-..     pip install -r dev-requirements.txt
-
-
-.. -----------------
-.. Running the Tests
-.. -----------------
-
-.. To run the tests, do::
-
-..     nosetests --nologcapture --with-pylons=test.ini
-
-.. To run the tests and produce a coverage report, first make sure you have
-.. coverage installed in your virtualenv (``pip install coverage``) then run::
-
-..     nosetests --nologcapture --with-pylons=test.ini --with-coverage --cover-package=ckanext.rq --cover-inclusive --cover-erase --cover-tests
+    git clone https://github.com/ckan/ckanext-rq.git
+    cd ckanext-rq
+    python setup.py develop
+    pip install -r requirements.txt
+    pip install -r dev-requirements.txt
 
 
-.. ---------------------------------
-.. Registering ckanext-rq on PyPI
-.. ---------------------------------
+-----------------
+Running the Tests
+-----------------
 
-.. ckanext-rq should be availabe on PyPI as
-.. https://pypi.python.org/pypi/ckanext-rq. If that link doesn't work, then
-.. you can register the project on PyPI for the first time by following these
-.. steps:
+To run the tests, do::
 
-.. 1. Create a source distribution of the project::
+    nosetests --nologcapture --with-pylons=test.ini
 
-..      python setup.py sdist
+To run the tests and produce a coverage report, first make sure you have
+coverage installed in your virtualenv (``pip install coverage``) then run::
 
-.. 2. Register the project::
-
-..      python setup.py register
-
-.. 3. Upload the source distribution to PyPI::
-
-..      python setup.py sdist upload
-
-.. 4. Tag the first release of the project on GitHub with the version number from
-..    the ``setup.py`` file. For example if the version number in ``setup.py`` is
-..    0.0.1 then do::
-
-..        git tag 0.0.1
-..        git push --tags
+    nosetests --nologcapture --with-pylons=test.ini --with-coverage --cover-package=ckanext.rq --cover-inclusive --cover-erase --cover-tests
 
 
-.. ----------------------------------------
-.. Releasing a New Version of ckanext-rq
-.. ----------------------------------------
+----------------------------------------
+Releasing a New Version of ckanext-rq
+----------------------------------------
 
-.. ckanext-rq is availabe on PyPI as https://pypi.python.org/pypi/ckanext-rq.
-.. To publish a new version to PyPI follow these steps:
+ckanext-rq is availabe on PyPI as https://pypi.python.org/pypi/ckanext-rq.
+To publish a new version to PyPI follow these steps:
 
-.. 1. Update the version number in the ``setup.py`` file.
-..    See `PEP 440 <http://legacy.python.org/dev/peps/pep-0440/#public-version-identifiers>`_
-..    for how to choose version numbers.
+1. Update the version number in the ``setup.py`` file.
+   See `PEP 440 <http://legacy.python.org/dev/peps/pep-0440/#public-version-identifiers>`_
+   for how to choose version numbers.
 
-.. 2. Create a source distribution of the new version::
+2. Create a source distribution of the new version::
 
-..      python setup.py sdist
+     python setup.py sdist
 
-.. 3. Upload the source distribution to PyPI::
+3. Upload the source distribution to PyPI::
 
-..      python setup.py sdist upload
+     python setup.py sdist upload
 
-.. 4. Tag the new release of the project on GitHub with the version number from
-..    the ``setup.py`` file. For example if the version number in ``setup.py`` is
-..    0.0.2 then do::
+4. Tag the new release of the project on GitHub with the version number from
+   the ``setup.py`` file. For example if the version number in ``setup.py`` is
+   0.0.2 then do::
 
-..        git tag 0.0.2
-..        git push --tags
+       git tag 0.0.2
+       git push --tags

@@ -20,13 +20,13 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # http://packaging.python.org/en/latest/tutorial.html#version
-    version='0.0.1',
+    version='0.1',
 
-    description='''Brings RQ background tasks to CKAN versions before 2.7''',
+    description='''Background jobs functionality for CKAN 2.6 and earlier''',
     long_description=long_description,
 
     # The project's main homepage.
-    url='https://github.com/davidread/ckanext-rq',
+    url='https://github.com/ckan/ckanext-rq',
 
     # Author details
     author='''David Read''',
