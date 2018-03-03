@@ -8,23 +8,23 @@
 .. .. image:: https://coveralls.io/repos/ckan/ckanext-rq/badge.svg
 ..   :target: https://coveralls.io/r/ckan/ckanext-rq
 
-.. image:: https://pypip.in/download/ckanext-rq/badge.svg
+.. image:: https://img.shields.io/pypi/dm/ckanext-rq.svg
     :target: https://pypi.python.org/pypi//ckanext-rq/
     :alt: Downloads
 
-.. image:: https://pypip.in/version/ckanext-rq/badge.svg
+.. image:: https://img.shields.io/pypi/v/ckanext-rq.svg
     :target: https://pypi.python.org/pypi/ckanext-rq/
     :alt: Latest Version
 
-.. image:: https://pypip.in/py_versions/ckanext-rq/badge.svg
+.. image:: https://img.shields.io/pypi/pyversions/ckanext-rq.svg
     :target: https://pypi.python.org/pypi/ckanext-rq/
     :alt: Supported Python versions
 
-.. image:: https://pypip.in/status/ckanext-rq/badge.svg
+.. image:: https://img.shields.io/pypi/status/ckanext-rq.svg
     :target: https://pypi.python.org/pypi/ckanext-rq/
     :alt: Development Status
 
-.. image:: https://pypip.in/license/ckanext-rq/badge.svg
+.. image:: https://img.shields.io/pypi/l/ckanext-rq.svg
     :target: https://pypi.python.org/pypi/ckanext-rq/
     :alt: License
 
