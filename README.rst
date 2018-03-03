@@ -8,10 +8,6 @@
 .. .. image:: https://coveralls.io/repos/ckan/ckanext-rq/badge.svg
 ..   :target: https://coveralls.io/r/ckan/ckanext-rq
 
-.. image:: https://img.shields.io/pypi/dm/ckanext-rq.svg
-    :target: https://pypi.python.org/pypi//ckanext-rq/
-    :alt: Downloads
-
 .. image:: https://img.shields.io/pypi/v/ckanext-rq.svg
     :target: https://pypi.python.org/pypi/ckanext-rq/
     :alt: Latest Version
